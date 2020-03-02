@@ -19,7 +19,14 @@ class MyTestCase(unittest.TestCase):
             print(self.calculator.result)
         print("------------------Subtraction-------------------")
 
-
+    def test_addition(self):
+        self.test_data = CsvReader('/src/Addition.csv').data
+        for row1 in self.test_data:
+            result1 = float(row1['Result'])
+            self.assertEqual(self.calculator.add(int(row1['Value 1']), int(row1['Value 2'])), int(row1['Result']))
+            self.assertEqual(self.calculator.result, int(row1['Result']))
+            print(self.calculator.result)
+        print("------------------Addition-------------------")
 
 
     def test_results_property(self):
