@@ -28,6 +28,14 @@ class MyTestCase(unittest.TestCase):
             print(self.calculator.result)
         print("------------------Addition-------------------")
 
+    def test_multiplication(self):
+        self.test_data = CsvReader('/src/Multiplication.csv').data
+        for row in self.test_data:
+            self.assertEqual(self.calculator.multiply(int(row['Value 1']), int(row['Value 2'])), int(row['Result']))
+            self.assertEqual(self.calculator.result, int(row['Result']))
+            print(self.calculator.result)
+        print("------------------Multiplication-------------------")
+
 
     def test_results_property(self):
         self.assertEqual(self.calculator.result, 0)
