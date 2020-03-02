@@ -40,6 +40,11 @@ def m_square(a):
     b = int(a)* int(a)
     return b
 
+def m_squareroot(a):
+    b = math.sqrt(a)
+    return b
+
+
 class Calculator:
     result = 0
 
@@ -64,4 +69,8 @@ class Calculator:
 
     def square(self, a):
         self.result = m_square(a)
+        return self.result
+
+    def squareroot(self, a):
+        self.result = m_squareroot(a)
         return self.result
