@@ -1,8 +1,9 @@
 from CsvReader import CsvReader
-
+from decimal import *
 
 def addition(a, b):
-    c = a + b
+    a = int(a)
+    b = int(b)
     return c
 
 
@@ -12,10 +13,27 @@ def subtraction(a, b):
     c = b - a
     return c
 
+def multiplication(a, b):
+    a = int(a)
+    b = int(b)
+    c = b * a
+    return c
 
-def mean(data):
-    mean = data
-    return mean
+def m_division(a, b):
+    a = int(a)
+    b = int(b)
+    c = b / a
+
+    print(c)
+
+    if  len(str(c)) == 17:
+        t = float(str(c)[:-6])
+    elif len(str(c)) == 19:
+        t = float(str(c)[:-9])
+    elif len(str(c)) == 12:
+        t = float(str(c)[:-2])
+    return c
+
 
 
 class Calculator:
@@ -32,13 +50,11 @@ class Calculator:
         self.result = subtraction(a, b)
         return self.result
 
+    def multiply(self, a, b):
+        self.result = multiplication(a, b)
+        return self.result
 
-class CSVStats(Calculator):
-    data = []
+    def division(self, a, b):
+        self.result = m_division(a, b)
+        return self.result
 
-    def __init__(self, data_file):
-        self.data = CsvReader(data_file)
-        pass
-
-    def mean(self):
-        mean(self.data)
