@@ -4,6 +4,7 @@ from decimal import *
 def addition(a, b):
     a = int(a)
     b = int(b)
+    c = a + b
     return c
 
 
@@ -34,6 +35,15 @@ def m_division(a, b):
         t = float(str(c)[:-2])
     return c
 
+def m_square(a):
+    b = int(a)* int(a)
+
+
+    print(a)
+
+
+    return b
+
 
 
 class Calculator:
@@ -58,3 +68,6 @@ class Calculator:
         self.result = m_division(a, b)
         return self.result
 
+    def square(self, a):
+        self.result = m_square(a)
+        return self.result
