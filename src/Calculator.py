@@ -36,6 +36,10 @@ def m_division(a, b):
         t = float(str(c)[:-2])
     return float(c)
 
+def m_square(a):
+    b = int(a)* int(a)
+    return b
+
 class Calculator:
     result = 0
 
@@ -56,4 +60,8 @@ class Calculator:
 
     def division(self, a, b):
         self.result = m_division(a, b)
+        return self.result
+
+    def square(self, a):
+        self.result = m_square(a)
         return self.result
