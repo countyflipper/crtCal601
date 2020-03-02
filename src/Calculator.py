@@ -21,7 +21,20 @@ def multiplication(a, b):
     c = b * a
     return c
 
+def m_division(a, b):
+    a = float(a)
+    b = float(b)
+    c = b / a
 
+
+
+    if  len(str(c)) == 17:
+        t = float(str(c)[:-6])
+    elif len(str(c)) == 19:
+        t = float(str(c)[:-9])
+    elif len(str(c)) == 12:
+        t = float(str(c)[:-2])
+    return float(c)
 
 class Calculator:
     result = 0
@@ -39,4 +52,8 @@ class Calculator:
 
     def multiply(self, a, b):
         self.result = multiplication(a, b)
+        return self.result
+
+    def division(self, a, b):
+        self.result = m_division(a, b)
         return self.result
